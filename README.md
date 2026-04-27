@@ -1,75 +1,28 @@
-# React + TypeScript + Vite
+## Frontend Developer Assignment: Dynamic Multi-Category Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Objective
 
-Currently, two official plugins are available:
+**Build a responsive web application that displays a multi-category product catalog. The application must parse a provided JSON structure and dynamically render item details based on category-specific properties.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+#### Requirements
 
-## React Compiler
+1. Home Screen (Category Overview)
+Display a clean, organized view of all available categories (e.g., Cars, Bikes, Phones, Computers).
+Each category section should show a preview of the items within it.
+The UI must be segregated properly so users can distinguish between categories at a glance.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+2. Item Detail Page
+When an item is selected, navigate to a dedicated detail page.
+Dynamic Rendering: Since different categories have different properties (e.g., "RPM" for cars vs. "Lens Type" for phones), the app must iterate through the itemprops array and display all attributes found there.
+Display the item name, category label, and the provided image.
 
-Note: This will impact Vite dev & build performances.
+3. Technical Constraints
+Data Handling: Use the provided JSON format (itemname, category, itemprops: []).
+Responsiveness: The layout must be fluid and work on mobile, tablet, and desktop.
+Tech stack: Use anyone of the following - NextJS, React, Javascript, HTML. For styling: CSS and/or Material UI
+State Management (optional): Preferably, use a modern framework (React, Vue, or Angular) and handle navigation efficiently.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  [Dummy-JSON](https://drive.google.com/file/d/1TyqHmTYylwtCBAPN520uxU8i_qGHbvjo/view?usp=drive_link)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Also, please share a short write-up along with your submission, explaining the tools/technologies you used, how much time it took to complete the assignment, and the idea or approach behind your implementation.
